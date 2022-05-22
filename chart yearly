@@ -1,1 +1,58 @@
-asdds
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+</head>
+<body>
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+</body>
+<script>
+
+var trace1 = {
+  x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  y: [20, 14, 25, 16, 18, 22, 19, 15, 12, 16, 14, 17],
+  type: 'bar',
+  name: '2021',
+  marker: {
+    color: 'rgb(49,130,189)',
+    opacity: 0.7,
+  }
+};
+
+var trace2 = {
+  x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  y: [19, 14, 22, 14, 16, 19, 15, 14, 10, 12, 12, 16],
+  type: 'bar',
+  name: '2022',
+  marker: {
+    color: 'rgb(63,191,26,1)',
+    opacity: 0.5
+  }
+};
+
+var trace3 = {
+  x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  y: [11, 10, 22, 14, 18, 19, 15, 14, 8, 12, 12, 13],
+  type: 'bar',
+  name: '2023',
+  marker: {
+    color: 'rgb(211,23,23,1)',
+    opacity: 0.9
+  }
+};
+
+var data = [trace1, trace2, trace3];
+
+var layout = {
+  title: '2021,22,23 Sales Report',
+  xaxis: {
+    tickangle: -45
+  },
+  barmode: 'group'
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+</script>
+</html>
